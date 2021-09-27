@@ -49,7 +49,7 @@ export interface ReactPainterProps {
   initialLineJoin?: LineJoinType;
   initialLineCap?: LineCapType;
   onSave?: (blob: Blob) => void;
-  image?: File | string;
+  image?: string;
   render?: (props: RenderProps) => JSX.Element;
 }
 
@@ -69,7 +69,7 @@ export class ReactPainter extends React.Component<ReactPainterProps, PainterStat
   static propTypes = {
     color: PropTypes.string,
     height: PropTypes.number,
-    image: PropTypes.oneOfType([PropTypes.instanceOf(File), PropTypes.string]),
+    image: PropTypes.string,
     lineCap: PropTypes.string,
     lineJoin: PropTypes.string,
     lineWidth: PropTypes.number,
